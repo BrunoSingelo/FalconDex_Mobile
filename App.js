@@ -1,31 +1,31 @@
-import React,{ useState } from 'react';
-import { Text, View } from 'react-native';
-import { Button, Input } from 'react-native-elements';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import Login from './screens/Login';
-import Principal from './screens/Principal';
-import NovoChamado from './screens/NovoChamado';
-
-
-const Stack = createStackNavigator();
-
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Principal" component={Principal} />
-      <Stack.Screen name="NovoChamado" component={NovoChamado} />
-    </Stack.Navigator>
-  );
-}
+import React, { useState } from "react";
+import { NavigationContainer} from "@react-navigation/native"
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, Text } from "react-native";
+import Routes from "./src/routes";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Falcon Dex</Text>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
-
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 30,
+    color: 'black',
+    fontWeight: 'bold',
+    padding:5
+  },
+  container:{
+    display: 'flex',
+    flex: 1,
+    padding: 10,
+    paddingTop: 20,
+  }
+});
