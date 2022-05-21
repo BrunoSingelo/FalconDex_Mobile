@@ -1,7 +1,13 @@
 //axios
 import axios from "axios";
-import React from "react";
 
-const baseURL = "http://localhost:3000"
+const FalconDex = axios.create({
+    baseURL: 'http://localhost:3000/',
+    header:{ 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',   
+    }
+});
 
-axios.get(URL)
+
+export default FalconDex;
