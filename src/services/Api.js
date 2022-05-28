@@ -2,12 +2,7 @@
 import axios from "axios";
 
 const FalconDex = axios.create({
-    baseURL: 'http://localhost:3000/',
-    header:{ 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',   
-    }
+  baseURL: "http://192.168.1.109:3000/api/",
 });
-
 
 export default FalconDex;
