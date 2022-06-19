@@ -46,7 +46,7 @@ export default function Home({ navigation }) {
           color={"#FFF"}
           size={30}
         />
-        <Text style={styles.textButton}>Sair</Text>
+        <Text style={styles.textButton} onPress={() => navigation.goBack()}>Sair</Text>
       </TouchableOpacity>
     </View>
   );
